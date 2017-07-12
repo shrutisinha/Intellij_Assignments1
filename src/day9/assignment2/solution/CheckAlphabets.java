@@ -13,7 +13,7 @@ public class CheckAlphabets{
      */
     public boolean checker(String s){
         if(s==null)return  false;
-        s=s.replaceAll("[^A-Za-z]","");//NULL
+        s=s.replaceAll("[^A-Za-z]","");
         s=s.toLowerCase();
         s=s.replaceAll("(.)(?=.*\\1)", "");
         if (s.length()==26) {
@@ -29,24 +29,24 @@ public class CheckAlphabets{
      * @param str The input string
      * @return true if contains all letters of alphabet, otherwise false
      */
-    public boolean checker2(String str){
-        if(str==null)return  false;
-        boolean alphabets[]=new boolean[26];
-        int count=0;
-        str=str.toLowerCase();
-        for(int i=0;i<str.length();i++){
-            char x= str.charAt(i);
-            if (x>='a' && x<='z' && !alphabets[x-'a']){
-                count++;
-                alphabets[x-'a']=true;
-            }
-            if (count==26){
-                return true;
-            }
-        }
-        System.out.println("Contains only "+count+" alphabets.");
-        return false;
-
-    }
+//    public boolean checker2(String str){
+//        if(str==null)return  false;
+//        boolean alphabets[]=new boolean[26];
+//        int count=0;
+//        str=str.toLowerCase();
+//        for(int i=0;i<str.length();i++){
+//            char x= str.charAt(i);
+//            if (x>='a' && x<='z' && !alphabets[x-'a']){
+//                count++;
+//                alphabets[x-'a']=true;
+//            }
+//            if (count==26){
+//                return true;
+//            }
+//        }
+//        System.out.println("Contains only "+count+" alphabets.");
+//        return false;
+//
+//    }
 
 }

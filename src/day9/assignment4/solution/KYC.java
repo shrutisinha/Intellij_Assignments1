@@ -8,8 +8,17 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-
+/**
+ * Main Class
+ * Prints the allowable form date to fill the KYC form
+ */
 public class KYC {
+    /**
+     * Main Method that takes input from user which is the signup date and the current date in a particular format.
+     * It prints the range of form date for filling the KYC form
+     * @param args no use
+     * @throws IOException As input comes from the stream
+     */
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s = null;

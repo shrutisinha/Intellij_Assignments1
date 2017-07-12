@@ -6,13 +6,21 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
+ * Carries out all calculation for range of form date filling.
+ *
  * Created by Shruti on 11/7/17.
  */
 public class KYCFilling{
     private final SimpleDateFormat dateform =new SimpleDateFormat("dd-MM-yyyy");
     private Date signup;
     private Date current;
-    KYCFilling(String signupdate,String formdate)  {
+
+    /**
+     * Parameterised constructor
+     * @param signupdate signup date of customer
+     * @param formdate the current date when customer if filling the form
+     */
+    public KYCFilling(String signupdate,String formdate)  {
         try {
             signup= dateform.parse(signupdate);
             current = dateform.parse(formdate);
@@ -21,7 +29,13 @@ public class KYCFilling{
             e.printStackTrace();
         }
     }
+    //Private to prevent its usage
+    private KYCFilling(){}
 
+    /**
+     * Checks whether the signup and current date entry is valid
+     * @return true if signup date is before current date else false
+     */
     private boolean validSignupDate() {
         return signup.compareTo(current) <= 0;
     }
@@ -45,6 +59,10 @@ public class KYCFilling{
         return anni;
     }
 
+    /**
+     * Generates the range in which form date can lie
+     * @param anniv Closest anniversary
+     */
     private void generateFormDateRange(Date anniv) {
 
             Calendar cal = Calendar.getInstance();
@@ -58,6 +76,10 @@ public class KYCFilling{
             }
         System.out.println("You call file your KYC for dates: "+dateform.format(startani)+" to "+dateform.format(endani));
     }
+    //should we do this in main function?
+    /**
+     * Prints the range of form date if possible
+     */
     public void printFormDateRange(){
         if(validSignupDate()){
             Date anniv=AnniversaryDate();

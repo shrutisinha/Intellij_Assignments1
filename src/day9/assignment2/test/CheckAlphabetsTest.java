@@ -16,29 +16,33 @@ public class CheckAlphabetsTest {
         chk=new CheckAlphabets();
     }
     @Test
-    public void checker() throws Exception {
-
-
+    public void checkerTest1() {
         String s="qWERtyudfagdhkvlmxnzbcDSCXVCBMVBLBPOIUYTQ14356wqetyuioplkjhgfdsazxcvbnm,,......;0987642!@#$%^&*";
         assertTrue(chk.checker(s));
+    }
+    @Test
+    public void checkerTest2(){
+        String s= "shfjfigk";
         assertFalse(chk.checker(s));
-        s= "shfjfigk";
-        assertFalse(chk.checker(s));
-        s= null;
+    }
+    @Test
+    public void checkerTest3(){
+        String s= null;
         assertFalse(chk.checker(s));
     }
 
-    @Test
-    public void checker2() throws Exception {
-        //CheckAlphabets chk=new CheckAlphabets();
-        String s= null;
-        assertFalse(chk.checker2(s));
-        s="qWERtyudfagdhkvlmxnzbcDSCXVCBMVBLBPOIUYTQ14356wqetyuioplkjhgfdsazxcvbnm,,......;0987642!@#$%^&*";
-        assertTrue(chk.checker2(s));
-        s= "shfjfigk";
-        assertFalse(chk.checker2(s));
-        s= "";
-        assertFalse(chk.checker2(s));
-    }
+
+//    @Test
+//    public void checker2(){
+//        //CheckAlphabets chk=new CheckAlphabets();
+//        String s= null;
+//        assertFalse(chk.checker2(s));
+//        s="qWERtyudfagdhkvlmxnzbcDSCXVCBMVBLBPOIUYTQ14356wqetyuioplkjhgfdsazxcvbnm,,......;0987642!@#$%^&*";
+//        assertTrue(chk.checker2(s));
+//        s= "shfjfigk";
+//        assertFalse(chk.checker2(s));
+//        s= "";
+//        assertFalse(chk.checker2(s));
+//    }
 
 }
