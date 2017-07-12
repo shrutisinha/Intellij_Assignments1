@@ -4,8 +4,12 @@
  * out full absolute path of the matching files found.
  */
 package day9.assignment1;
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -36,9 +40,12 @@ class FindPath {
         if(fileslist.length!=0){
             for(File file : fileslist){
                 if(file.isFile() ){
-                    Pattern p= Pattern.compile(rgx);
-                    Matcher m=p.matcher(file.getName());
-                    if(m.matches()) {
+//                    Pattern p= Pattern.compile(rgx);
+//                    Matcher m=p.matcher(file.getName());
+//                    if(m.matches()) {
+//                        result.add(file);
+//                    }
+                    if(file.getName().matches(rgx)){
                         result.add(file);
                     }
                     //System.out.println(file);

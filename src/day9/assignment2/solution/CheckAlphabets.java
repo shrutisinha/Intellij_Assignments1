@@ -12,12 +12,14 @@ public class CheckAlphabets{
      * @return true if contains all letters of alphabet, otherwise false
      */
     public boolean checker(String s){
+        if(s==null)return  false;
         s=s.replaceAll("[^A-Za-z]","");//NULL
         s=s.toLowerCase();
         s=s.replaceAll("(.)(?=.*\\1)", "");
         if (s.length()==26) {
             return true;
         }
+        System.out.println("Contains only "+s.length()+" alphabets.");
         return false;
 
     }
@@ -28,6 +30,7 @@ public class CheckAlphabets{
      * @return true if contains all letters of alphabet, otherwise false
      */
     public boolean checker2(String str){
+        if(str==null)return  false;
         boolean alphabets[]=new boolean[26];
         int count=0;
         str=str.toLowerCase();
@@ -41,6 +44,7 @@ public class CheckAlphabets{
                 return true;
             }
         }
+        System.out.println("Contains only "+count+" alphabets.");
         return false;
 
     }

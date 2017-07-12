@@ -2,9 +2,13 @@
  * the time taken to ping. Use the system ping utility, do not use any deprecated methods.
  * Created by zemoso on 11/7/17.
  */
-package day9.assignment3;
-import java.io.*;
-import java.util.*;
+package day9.assignment3.solution;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Program to ping a given hostname given number of times and calculate median time taken in
