@@ -36,7 +36,7 @@ public class KYCFilling{
      * Checks whether the signup and current date entry is valid
      * @return true if signup date is before current date else false
      */
-    private boolean validSignupDate() {
+    public boolean validSignupDate() {
         return signup.compareTo(current) <= 0;
     }
 
@@ -44,26 +44,31 @@ public class KYCFilling{
      * Calculates the relevent anniversary date for finding the form date range.
      * @return Date of closest anniversary
      */
-    private Date AnniversaryDate() {
+    public Date AnniversaryDate() {
 
         Calendar ani = Calendar.getInstance();
         ani.setTime(signup);
+
         Calendar cur = Calendar.getInstance();
         cur.setTime(current);
-
+        cur.add(Calendar.DATE,30);
+        Date i1=cur.getTime();
+        Date i2=ani.getTime();
+        System.out.println(i1+""+i2);
         ani.set(Calendar.YEAR,cur.get(Calendar.YEAR));
         if(ani.after(cur)){
             ani.add(Calendar.YEAR,-1);
         }
         Date anni=ani.getTime();
-        return anni;
+        return anni;//anni is used to convert calender to Date which is return type
+
     }
 
     /**
      * Generates the range in which form date can lie
      * @param anniv Closest anniversary
      */
-    private void generateFormDateRange(Date anniv) {
+    public String generateFormDateRange(Date anniv) {
 
             Calendar cal = Calendar.getInstance();
             cal.setTime(anniv);
@@ -74,19 +79,9 @@ public class KYCFilling{
             if(endani.after(current)) {
                 endani=current;
             }
-        System.out.println("You call file your KYC for dates: "+dateform.format(startani)+" to "+dateform.format(endani));
-    }
-    //should we do this in main function?
-    /**
-     * Prints the range of form date if possible
-     */
-    public void printFormDateRange(){
-        if(validSignupDate()){
-            Date anniv=AnniversaryDate();
-            generateFormDateRange(anniv);
-        }
-        else {
-            System.out.println("You cannot file the KYC form before signing up to Grover Healthcare.");
-        }
+            if(startani.before(signup)){
+                startani=signup;
+            }
+        return (dateform.format(startani)+" to "+dateform.format(endani));
     }
 }

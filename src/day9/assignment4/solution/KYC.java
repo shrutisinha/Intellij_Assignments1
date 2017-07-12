@@ -3,9 +3,6 @@ package day9.assignment4.solution;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -35,8 +32,14 @@ public class KYC {
                 System.exit(0);
             }
         }
-        String[] dates=s.split(" ");
+        String[] dates=s.split(" ");//might throw exception but its handles
         KYCFilling form=new KYCFilling(dates[0],dates[1]);
-        form.printFormDateRange();
+        if(form.validSignupDate()){
+            Date anniv=form.AnniversaryDate();
+            System.out.println("You can file your KYC for dates: "+form.generateFormDateRange(anniv));
+        }
+        else {
+            System.out.println("You cannot file the KYC form before signing up to Grover Healthcare.");
+        }
     }
 }
