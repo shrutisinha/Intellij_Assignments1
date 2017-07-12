@@ -7,14 +7,12 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
+ * Test class to test CheckAlphabets class
  * Created by zemoso on 11/7/17.
  */
 public class CheckAlphabetsTest {
-    private  CheckAlphabets chk;
-    @Before
-    public void init(){
-        chk=new CheckAlphabets();
-    }
+    private  CheckAlphabets chk = new CheckAlphabets();
+
     @Test
     public void checkerTest1() {
         String s="qWERtyudfagdhkvlmxnzbcDSCXVCBMVBLBPOIUYTQ14356wqetyuioplkjhgfdsazxcvbnm,,......;0987642!@#$%^&*";
@@ -27,8 +25,7 @@ public class CheckAlphabetsTest {
     }
     @Test
     public void checkerTest3(){
-        String s= null;
-        assertFalse(chk.checker(s));
+        assertFalse(chk.checker(null));
     }
 
 

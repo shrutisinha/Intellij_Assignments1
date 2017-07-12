@@ -1,4 +1,4 @@
-/**Java Assignment 2
+/*Java Assignment 2
  */
 package day9.assignment2.solution;
 
@@ -6,6 +6,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Main class.
+ * Program to calculate whether the input by the user contains all letters from a-z
+ */
 public class Alphabets {
 
     /**
