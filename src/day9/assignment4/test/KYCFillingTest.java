@@ -1,6 +1,7 @@
 package day9.assignment4.test;
 
 import day9.assignment4.solution.KYCFilling;
+import org.junit.Before;
 import org.junit.Test;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,10 +14,15 @@ import static org.junit.Assert.*;
  */
 public class KYCFillingTest {
     private KYCFilling obj;
-    private Date dt = new Date();
-    private Date anniv=new Date();
-    private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-
+    private Date dt;
+    private Date anniv;
+    private SimpleDateFormat sdf;
+    @Before
+    public void init(){
+        dt = new Date();
+        anniv = new Date();
+        sdf = new SimpleDateFormat("dd-MM-yyyy");
+    }
     @Test
     public void validSignupDate(){
         //the format is being checked in the main function so null cases wont occur
